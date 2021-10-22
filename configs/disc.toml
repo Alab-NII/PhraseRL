@@ -1,0 +1,47 @@
+data_path = 'data/norm-multi-woz'
+task = 'multiwoz'
+
+shuffle_data = true
+n_epoch = 50
+patience = 5
+eval_metric = 'token_loss'
+run_task_metrics = false
+batch_size = 32
+valid_freq = 1
+vocab_cutoff = 30
+max_gen_len = 50
+beam_size = 5
+
+agent = 'template'
+optim = 'adam'
+lr = 0.001
+clip = 1.0
+rnn_class = 'gru'
+word_emb_dim = 128
+rnn_hid_dim = 256
+state_emb_dim = 128
+dropout = 0.5
+reset_every_turn = false
+
+# Encoder
+autoencoder = false
+
+# Act Encoder
+act_type = 'categorical'
+act_freeze = false
+use_context = true
+use_bpr = false
+n_act = 10
+m_act = 10
+
+# Decoder
+k_base = 80
+k_mul = 5
+l_max = 4
+unif_len_ps = true
+use_ab_score = false
+trans_ab_dim = 64
+trans_cd_dim = 32
+cd_lin_dim = 64
+disallow_self_trans = true
+autoregressive = false
