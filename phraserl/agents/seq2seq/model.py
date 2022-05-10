@@ -62,7 +62,7 @@ class Seq2SeqModel(nn.Module):
 
         # read
         x = self.embedding(txt)
-        x = pack_padded_sequence(x, txt_lens, enforce_sorted=False)
+        x = pack_padded_sequence(x, txt_lens.cpu(), enforce_sorted=False)
         x, h = self.encoder(x, None)
         enc_hs, _ = pad_packed_sequence(x)
 
@@ -110,7 +110,7 @@ class Seq2SeqModel(nn.Module):
 
         # read
         x = self.embedding(txt)
-        x = pack_padded_sequence(x, txt_lens, enforce_sorted=False)
+        x = pack_padded_sequence(x, txt_lens.cpu(), enforce_sorted=False)
         x, h = self.encoder(x, None)
         enc_hs, _ = pad_packed_sequence(x)
 
