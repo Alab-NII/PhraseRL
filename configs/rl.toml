@@ -1,0 +1,7 @@
+rewards = ["multiwoz", "multiwoz-bleu"]
+reward_coefs = [1.0, 0.0]
+gamma = 0.99
+rl_lr = 0.0001
+rl_optim = "adam"
+
+autoencoder = false

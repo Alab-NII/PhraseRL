@@ -40,7 +40,7 @@ To run additional training with reinforcement learning, execute the following co
 ```sh
 # Train DISC model
 poetry shell
-python bin/policy.py -c configs/disc.toml -s 0 -o outputs/disc-rl -m outputs/disc/best_model.pt
+python bin/policy.py -c outputs/disc/config.toml configs/rl.toml -s 0 -o outputs/disc-rl -m outputs/disc/best_model.pt
 # Test
 python bin/test.py -o outputs/disc-rl -m best_model.pt
 # Displaying outputs
