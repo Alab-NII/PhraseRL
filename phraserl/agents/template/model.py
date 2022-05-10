@@ -382,7 +382,7 @@ class TemplateModel(nn.Module):
             x = torch.cat([bos, x], dim=0)
             x_lens = x_lens + 1
         x_emb = self.word_embedding(x)
-        packed_x_emb = pack_padded_sequence(x_emb, x_lens, enforce_sorted=False)
+        packed_x_emb = pack_padded_sequence(x_emb, x_lens.cpu(), enforce_sorted=False)
         x, h = self.encoder(packed_x_emb, h)
         x, _ = pad_packed_sequence(x)
         return x, h
